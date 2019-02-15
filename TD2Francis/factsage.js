@@ -2,7 +2,7 @@ document.getElementsByName("submit").addEventListener("submit", postData);
 var formTest = document.getElementById("form");
 console.log(JSON.stringify(form.serializeArray()))
 
-function postData(event){
+function postData(event) {
     event.preventDefault();
     var form = document.getElementById("form");
     //event.target.form();
@@ -13,14 +13,13 @@ function postData(event){
         body: JSON.stringify(form.serializeArray()),
     })
 
-
 }
 
 function objectifyForm(formArray) {
 
     var returnArray = {};
-    for (var i = 0; i < formArray.length; i++){
-      returnArray[formArray[i]['name']] = formArray[i]['value'];
+    for (var i = 0; i < formArray.length; i++) {
+        returnArray[formArray[i]['name']] = formArray[i]['value'];
     }
     return returnArray;
 }
