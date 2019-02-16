@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LOG2420 - TD2</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="factsage.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="factsage.js"></script>
+</head>
+
+<body>
+    <form id="myForm">
+        <input type=hidden value=EQUILIB name=PROGRAM>
+        <div id="formulaire">
+            <div id="item1">Chemical equilibria of an ideal gas with pure solids and liquids</div>
+            <div id="item2">
+                <table>
+                    <tr>
+                        <td>
+                            T:<input maxlength=8 size=8 value=1000 name=TMIN> Units:
+                            <select name="T_units" size="1" id="T_units">
+                    <option value="TK" selected>K</option>
+                    <option value="TC" >C</option>
+                </select>
+                        </td>
+                        <td>
+                            Mass:
+                            <select size=1 name=MASS>
+                        <option value="X" >mole</option>
+                        <option value="%" selected>gram</option>
+                </select>
+                        </td>
+                        <td>
+                            P:
+                            <input name="P_value" type="text" id="P_value2" value=1 size="4"> Units:
+                            <select size=1 name=PRESSURE>
+                    <option value="ATM" selected>atm</option>
+                    <option value="BAR" >bar</option>
+                </select>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="item3">
+                <table id="tableDesCompostantes">
+                    <tr>
+                        <td>
+                            Mass <br>
+                            <input type="text" id="react1n" value="2" size="5"><br>
+                        </td>
+                        <td>
+                            Species <br>
+                            <input maxlength=15 size=5 name="REACT1" id="REACT1" value=""> +
+                        </td>
+                    </tr>
+                    <td>
+                        Mass <br>
+                        <input name="react2n" type="text" id="react2n" value="" size="5">
+                    </td>
+                    <td>
+                        Species <br>
+                        <input maxlength=15 size=5 name=REACT2 id="REACT2" value="O2">
+                    </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div id="item4">
+                <div id="item4a">
+                    <table>
+                        <tr>
+                            <td>
+                                Output:
+                            </td>
+                            <td>
+                                Concentration cut-off
+                            </td>
+                            <td>
+                                <select size=1 name=CUT>
+                                <option value="1E-70" selected>1e-70</option>
+                                <option value="1E-50" >1e-50</option>
+                                <option value="1E-30" >1e-30</option>
+                                <option value="1E-20" >1e-20</option>
+                                <option value="1E-15" >1e-15</option>
+                                <option value="1E-10" >1e-10</option>
+                                <option value="1E-8" >1e-8</option>
+                                <option value="1E-6" >1e-6</option>
+                                <option value="1E-5" >1e-5</option> 
+                            </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Format</td>
+                            <td>
+                                <select name=format size=1 id="select">
+                                <option value="OUTC" >ChemSage</option>
+                                <option value="OUTB" selected>Extended</option>
+                                <option value="OUTF" >FACT</option>
+                            </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Distribution</td>
+                            <td>
+                                <select size=1 name=DIST>
+                                DIST =  
+                                <option value="NODIST" selected>no</option>
+                                <option value="DIST" >yes</option>
+                        </select></td>
+                        </tr>
+                    </table>
+                </div>
+                <div id="item4b">
+                    <input id="clearButton" name="clear" type="button" value="Clear" onClick="clearData()">
+                    <input id="DefaultButton" name="Button" type=button value=Default onClick="default_values()">
+                    <INPUT id="submit" name="submit" type=submit value="Calculate &gt;&gt;">
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </form>
+    <div id="loading"></div>
+
+</body>
+
+</html>
