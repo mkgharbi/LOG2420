@@ -1,29 +1,27 @@
-document.getElementsByName("submit").addEventListener("submit", postData);
-var formTest = document.getElementById("form");
-console.log(JSON.stringify(form.serializeArray()))
-
-function postData(event){
+$( "form" ).submit(function( event ) {
     event.preventDefault();
-    var form = document.getElementById("form");
-    //event.target.form();
-    //objectifyForm(form.serializeArray());
+    postData($( this ).serialize());
 
+});
+  
+
+function postData(form) {
     fetch("http://localhost:8080", {
         method: 'POST',
-        body: JSON.stringify(form.serializeArray()),
+        body: form,
     })
-
-
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(myJson) {
+        console.log(JSON.stringify(myJson));
+    })
+    .catch(function(error) {
+        console.log(error);
+    })
 }
 
-function objectifyForm(formArray) {
 
-    var returnArray = {};
-    for (var i = 0; i < formArray.length; i++){
-      returnArray[formArray[i]['name']] = formArray[i]['value'];
-    }
-    return returnArray;
-}
 
 
 /*
