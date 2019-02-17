@@ -16,7 +16,7 @@ function default_values() {
 
 
 //Connexion with the server  : done  
-
+/*
 //document.getElementById('submitButton').addEventListener('submit', getPosts);
 //document.getElementById('submitButton').addEventListener('submit', addPost);
 
@@ -39,6 +39,7 @@ function getPosts() {
         .catch(error => console.log(error))
 
 }
+*/
 /*
 function addPost(event) {
     event.preventDefault();
