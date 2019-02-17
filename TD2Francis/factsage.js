@@ -1,24 +1,24 @@
-$( "form" ).submit(function( event ) {
+$("form").submit(function(event) {
     event.preventDefault();
-    postData($( this ).serialize());
+    postData($(this).serialize());
 
 });
-  
+
 
 function postData(form) {
     fetch("http://localhost:8080", {
-        method: 'POST',
-        body: form,
-    })
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(myJson) {
-        console.log(JSON.stringify(myJson));
-    })
-    .catch(function(error) {
-        console.log(error);
-    })
+            method: 'POST',
+            body: form,
+        })
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(myJson) {
+            console.log(JSON.stringify(myJson));
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
 }
 
 

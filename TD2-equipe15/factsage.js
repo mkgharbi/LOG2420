@@ -20,19 +20,17 @@ function default_values() {
 //document.getElementById('submitButton').addEventListener('submit', getPosts);
 //document.getElementById('submitButton').addEventListener('submit', addPost);
 
-let url = "https://localhost:8080/";
 
 function getPosts() {
     fetch("https://localhost:8080/")
-        .then((res) => res.json())
+        .then((response) => response.json())
         .then((data) => {
-            let output = '<h2 class="mb-4">Posts</h2>';
             data.forEach(function(post) {
                 output += `
             <div class="card card-body mb-3">
             <h3>${post.libelle}</h3>
-            <p>${post.unite}</p>
-            <d>${post.valeur}</d>
+            <p>${post.concentration}</p>
+            <p>${post.conditions}</p>
             </div>
             `;
             });
@@ -41,7 +39,7 @@ function getPosts() {
         .catch(error => console.log(error))
 
 }
-
+/*
 function addPost(event) {
     event.preventDefault();
     let form = postData($(this).serialize());
@@ -51,7 +49,7 @@ function addPost(event) {
     fetch("https://localhost:8080/", {
             method: 'POST',
             headers: {
-                'Accept': 'application/json, text/plain, */*',
+                'Accept': 'application/json',
                 'Content-type': 'application/json'
             },
             body: JSON.stringify(post)
@@ -59,12 +57,10 @@ function addPost(event) {
         .then((response) => response.json())
         .then((data) => console.log(data))
         .catch(error => console.log(error))
-
-
 }
 
-
-
+*/
+/*
 function postData(form) {
     event.preventDefault();
     let form = postData($(this).serialize());
@@ -83,7 +79,7 @@ function postData(form) {
         })
 }
 
-
+*/
 
 
 
