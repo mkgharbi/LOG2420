@@ -1,267 +1,56 @@
 //Done 
 
 
-function clearData() {
+function clearform() {
     document.getElementById("REACT1").value = "";
     document.getElementById("REACT2").value = "";
     document.getElementById("react2n").value = "";
+    document.getElementById("TMIN").value = "";
+    document.getElementById("P_value2").value = "";
+    document.getElementById("output1").innerHTML = "";
 }
-
 
 
 function default_values() {
-    document.getElementById("myForm").reset();
+    document.getElementById("form").reset();
 }
 
+//Partie server : 
 
 
-//Connexion with the server  : done  
-/*
-//document.getElementById('submitButton').addEventListener('submit', getPosts);
-//document.getElementById('submitButton').addEventListener('submit', addPost);
-
-
-function getPosts() {
-    fetch("https://localhost:8080/")
-        .then((response) => response.json())
-        .then((data) => {
-            data.forEach(function(post) {
-                output += `
-            <div class="card card-body mb-3">
-            <h3>${post.libelle}</h3>
-            <p>${post.concentration}</p>
-            <p>${post.conditions}</p>
-            </div>
-            `;
-            });
-            document.getElementById('output').innerHTML = output;
-        })
-        .catch(error => console.log(error))
-
-}
-*/
-/*
-function addPost(event) {
-    event.preventDefault();
-    let form = postData($(this).serialize());
-    let title = document.getElementById('libelle').value;
-    let body = form;
-
-    fetch("https://localhost:8080/", {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-type': 'application/json'
-            },
-            body: JSON.stringify(post)
-        })
-        .then((response) => response.json())
-        .then((data) => console.log(data))
-        .catch(error => console.log(error))
-}
-
-*/
-/*
-function postData(form) {
-    event.preventDefault();
-    let form = postData($(this).serialize());
-    fetch("http://localhost:8080", {
-            method: 'POST',
-            body: form,
-        })
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(myJson) {
-            console.log(JSON.stringify(myJson));
-        })
-        .catch(function(error) {
-            console.log(error);
-        })
-}
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-function getData() {
-    fetch("http://localhost:8080")
-        .then(response => response.json())
-        .then(myJson => console.json())
-        .catch(error => console.log(error))
-}
-
-
-
-function getUsers() { 
-    fetch(url)
-        .then(response => response.json())
-        .then(data => {
-            let output = ',h2 class'
-        } 
-        .catch(error => console.log(error))
-}
-*/
-
-/*
-
-
-$("form").submit(function(event) {
+$("form").submit(function() {
     event.preventDefault();
     postData($(this).serialize());
+})
 
-});
 
+function postData(form) {
+    setTimeout(document.getElementById("loading-bar").style.display = "block", 3000);
+    fetch("http://localhost:8080", {
+            method: "POST",
+            body: form
+        })
+        // À noter, la fonction .json() provoquait une SyntaxError
+        // Cette erreur semblait être causée par l"absence de guillemets autour des éléments de data-output.json.
+        // Nous avons donc pris la liberté de modifier le fichier en ajoutant des guillemets, faute d"avoir
+        // une autre solution évidente sous la main.
+        .then((response) => response.json())
+        .then(data => {
+            console.log(data);
+            console.log(data["output1"][3]["libelle"]);
+            formatData(data);
+        })
+        .catch(error => console.error(error))
+}
 
-const getPosts = () => {
-    return fetch("http://localhost:8080")
-        .then(response => response.json())
-        .then(myJson => console.json())
-        .catch(error => console.log(error))
-
-    const post = {
-        title: "fetch",
-        body: JSON.stringify(post)
-    }
-    const newPost = () => {
-        const options = {
-            method: 'POST',
-            body: JSON.stringify(post),
-            headers: new Headers({
-                'Content-Type': 'application/json'
-            })
-        }
-        return fetch(url, options)
-            .then(reponse => response.json())
-            .then(response => console.log(response))
-            .catch(error => console.error('Error:${error}'))
+function formatData(data) {
+    document.getElementById("loading-bar").style.display = "none";
+    document.getElementById("output1").style.display = "block";
+    var x = document.querySelectorAll("#output1 td");
+    x[0].innerHTML = "Libelle";
+    x[1].innerHTML = "Concentration";
+    for (var i = 0; i < data["output1"].length; i++) {
+        x[i * 2 + 2].innerHTML = data["output1"][i]["libelle"];
+        x[i * 2 + 3].innerHTML = data["output1"][i]["concentration"];
     }
 }
-*/
-/*
-        //TODO : getData and connect data to the server : 
-
-
-
-        
-            function setup() {
-                noCanvas();
-                var buttonSubmit = document.getElementById("submitButton");
-                buttonSubmit.addEventListener("click", function() {
-                        var myForm = document.getElementById("myForm");
-                        var data = new URLSearchParams(new FormData(myForm));
-
-                        fetch(url, {
-                                method: 'POST',
-                                headers: new Headers(),
-                                body: JSON.stringify(data)
-                            })
-                            .then((response) => response.json())
-                            .then(function(response) {})
-                            .catch(error => {
-                                    console.log('Error: ', error.message))
-                            })
-                })
-        }
-
-
-        $("#loading").show();
-
-        setTimeout(() => http.send(), 3000);
-
-
-
-        $("#loading").hide();
-
-
-
-        window.onload = function() {
-
-
-        //var img = $("<img src = 'loader.gif'/> ");
-        //$("#result").append(img);
-
-
-        fetch('http://localhost:8080/', {
-                method: 'post',
-                body: data
-            })
-            .then((response) => response.json())
-            .then(function(response) {
-                $("#result").empty();
-                console.log(data);
-                //GenerateOutput(data);
-            })
-
-        })
-
-        }
-
-        function getData() {
-            return fetch("https://localhost:8080/")
-                .then(response => response.json())
-                .then(posts => console.log(posts))
-        }
-        const newPost => {
-        const options = {
-            method: 'POST',
-            headers: new Headers,
-            body: JSON.stringify(form.serializeArray()),
-        }
-        })
-
-        function sendData(url, data) {
-            var formData = new FormData();
-
-            for (var name in data) {
-                formData.append(name, data[name]);
-            }
-
-            function postData() {
-                event.preventDefault();
-            }
-        }
-        //document.getElementById("submit").addEventListener('submit', setup);
-        var form = document.getElementById("form");
-
-        function setup(event) {
-            noCanvas();
-
-            event.preventDefault();
-            fetch(url, {
-                    method: 'POST',
-                    body: JSON.stringify(form.serializeArray()),
-                    headers: {
-                        "Content-Type": 'application/json'
-                    }
-                }).then((response) => response.json())
-                .then((data) => console.log(data))
-                .catch(error => console.error('Error: ${error} '))
-        }
-
-        function postData(event) {
-            event.preventDefault();
-
-            fetch('https://jsonplaceholder.typicode.com/posts', {
-                    method: 'POST',
-                    headers: new Headers(),
-                    body: JSON.stringify({ tittle: tittle, body: body })
-                }).then((res) => res.json())
-                .then((data) => console.log(data))
-                .catch((err) => console.log(err))
-        }
-        */

@@ -5,66 +5,65 @@
     <title>LOG2420 - TD2</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="factsage.css">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="factsage.js"></script>
 </head>
 
 <body>
-    <form id="myForm">
+    <form id="form">
         <input type=hidden value=EQUILIB name=PROGRAM>
         <div id="formulaire">
             <div id="item1">Chemical equilibria of an ideal gas with pure solids and liquids</div>
             <div id="item2">
-                <table>
-                    <tr>
-                        <td>
-                            T:<input maxlength=8 size=8 value=1000 name=TMIN> Units:
-                            <select name="T_units" size="1" id="T_units">
-                                <option value="TK" selected>K</option>
-                                <option value="TC">C</option>
-                            </select>
-                        </td>
-                        <td>
-                            Mass:
-                            <select size=1 name=MASS>
-                                <option value="X">mole</option>
-                                <option value="%" selected>gram</option>
-                            </select>
-                        </td>
-                        <td>
-                            P:
-                            <input name="P_value" type="text" id="P_value2" value=1 size="4"> Units:
-                            <select size=1 name=PRESSURE>
-                                <option value="ATM" selected>atm</option>
-                                <option value="BAR">bar</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
+                <div id="item2a">
+                    T:<input id="TMIN" maxlength=8 size=8 value=1000 name=TMIN> Units:
+                    <select name="T_units" size="1" id="T_units">
+                        <option value="TK" selected>K</option>
+                        <option value="TC">C</option>
+                    </select>
+                </div>
+                <div id="item2b">
+                    Mass:
+                    <select size=1 name=MASS>
+                        <option value="X" selected>mole</option>
+                        <option value="%">gram</option>
+                    </select>
+                </div>
+                <div id="item2c">
+                    P:
+                    <input name="P_value" type="text" id="P_value2" value=1 size="4"> Units:
+                    <select size=1 name=PRESSURE>
+                        <option value="ATM" selected>atm</option>
+                        <option value="BAR">bar</option>
+                    </select>
+                    <input type=hidden value=tk name=TEMPERATURE>
+                    <input type=hidden value=noaqua name=AQUEOUS>
+                </div>
             </div>
 
             <div id="item3">
-                <table id="tableDesCompostantes">
-                    <tr>
-                        <td>
-                            Mass <br>
-                            <input type="text" id="react1n" value="" size="5"><br>
-                        </td>
-                        <td>
-                            Species <br>
-                            <input maxlength=15 size=5 name="REACT1" id="REACT1" value="Si"> +
-                        </td>
-                    </tr>
-                    <td>
-                        Mass <br>
-                        <input name="react2n" type="text" id="react2n" value="1.5" size="5">
-                    </td>
-                    <td>
-                        Species <br>
-                        <input maxlength=15 size=5 name=REACT2 id="REACT2" value="O2">
-                    </td>
-                    </tr>
-                </table>
+                <div id="mass1">
+                    Mass <br>
+                    <input name="react1n" type="text" id="react1n" value="" size="5"><br>
+                </div>
+                <div id="species1">
+                    Species <br>
+                    <input id="REACT1" maxlength=15 size=5 name=REACT1 value="Si"> +
+                </div>
+                <div id="mass2">
+                    Mass <br>
+                    <input id="react2n" name="react2n" type="text" id="react2n" value="1.5" size="5">
+                </div>
+                <div id="species2">
+                    Species <br>
+                    <input id="REACT2" maxlength=15 size=5 name=REACT2 value="O2">
+                </div>
+
+
+                <input name="react3n" type="hidden" id="react3n3" value="" size="5">
+                <input maxlength=15 type="hidden" size=5 name=REACT3 value="">
+                <input name="react4n" type="hidden" id="react4n" value="" size="5">
+                <input maxlength=15 type="hidden" size=5 name=REACT4 value="">
+                <input type=hidden name=REACT5>
+
             </div>
 
             <div id="item4">
@@ -89,6 +88,7 @@
                                     <option value="1E-6">1e-6</option>
                                     <option value="1E-5">1e-5</option>
                                 </select>
+                                <input type=hidden value="Calculate &gt;&gt;" name=submit>
                             </td>
                         </tr>
                         <tr>
@@ -113,32 +113,82 @@
                                 </select></td>
                         </tr>
                     </table>
+
                 </div>
                 <div id="item4b">
-                    <input id="clearButton" name="clear" type="button" value="Clear" onClick="clearData();">
-                    <input id="DefaultButton" name="Button" type=button value=Default onClick="default_values();">
-                    <INPUT id="submitButton" name="submit" type=submit value="Calculate &gt;&gt;" onclick="getPosts();">
+                    <input name="clear" type="button" id="clear2" value="Clear" onClick="clearform();">
+                    <input name="Button" type=button value=Default onClick="default_values();">
+                    <INPUT name="submit" type=submit value="Calculate &gt;&gt;">
                 </div>
             </div>
-        </div>
+
         </div>
 
     </form>
     <div>
-        <img id="loading" style="display:none;" alt="Loading" />
+        <img id="loading-bar" src="loader.gif" style="display: none;">
     </div>
-    <div id="output"></div>
-    <form id="addPost">
-        <div class="form-group">
-            <input type="text" id="title" class="form-control" placeholder="Title">
-        </div>
-        <div class="form-group">
-            <textarea id="body" class="form-control" placeholder="Body"></textarea>
-        </div>
-        <input type="submit" class="btn btn-secondary" value="Submit">
-    </form>
-    </div>
-
+    <table class="output" id="output1" style="display: none;">
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
 </body>
+
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="factsage.js"></script>
 
 </html>
