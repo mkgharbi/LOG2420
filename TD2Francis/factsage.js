@@ -1,4 +1,4 @@
-$( "form" ).submit(function( event ) {
+$("form").submit(function(event) {
     event.preventDefault();
     postData($( this ).serialize());
     document.getElementById("loader").style.display = "block";
@@ -36,18 +36,20 @@ function default_values() {
 
 function postData(form) {
     fetch("http://localhost:8080", {
-        method: 'POST',
-        body: form
-    })
-    // À noter, la fonction .json() provoquait une SyntaxError
-    // Cette erreur semblait être causée par l'absence de guillemets autour des éléments de data-output.json.
-    // Nous avons donc pris la liberté de modifier le fichier en ajoutant des guillemets, faute d'avoir
-    // une autre solution évidente sous la main.
-    .then((res)=>res.json())
-    .then(data=> {console.log(data);
-                   console.log(data['output1'][3]['libelle']); 
-                formatData(data);})
-   
+            method: 'POST',
+            body: form
+        })
+        // À noter, la fonction .json() provoquait une SyntaxError
+        // Cette erreur semblait être causée par l'absence de guillemets autour des éléments de data-output.json.
+        // Nous avons donc pris la liberté de modifier le fichier en ajoutant des guillemets, faute d'avoir
+        // une autre solution évidente sous la main.
+        .then((res) => res.json())
+        .then(data => {
+            console.log(data);
+            console.log(data['output1'][3]['libelle']);
+            formatData(data);
+        })
+
     .catch(function(error) {
         console.log(error);
     })

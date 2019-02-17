@@ -95,11 +95,29 @@ table {
     display: grid;
 }
 
-#loading {
-    background: url('loader.gif') no-repeat center center;
+#loading-bar {
+    display: none;
+    /* default */
+    display: grid;
+    position: center;
+    width: 10%;
+    height: 10%;
+    left: 50%;
+    top: 50%;
+}
+
+#output1 {
+    position: fixed;
+    display: grid;
+    top: 50%;
+    left: 50%;
+    border: 1px solid black;
+}
+
+.output.td,
+.output.tr {
     position: fixed;
     top: 50%;
     left: 50%;
-    height: 100%;
-    width: 100%;
+    border: 1px solid black;
 }
