@@ -7,13 +7,14 @@
 </head>
 
 <body>
-    <form id="form">
+    <form id="form" name="myform">
     <input type=hidden value=EQUILIB name=PROGRAM>
     <div id="formulaire">
         <div id="item1">Chemical equilibria of an ideal gas with pure solids and liquids</div>
         <div id="item2">
             <div id="item2a">
-                T:<input maxlength=8 size=8 value=1000 name=TMIN>
+                T: 
+                <input maxlength=8 size=8 value=1000 name=TMIN>
                 Units:
                 <select name="T_units" size="1" id="T_units">
                     <option value="TK" selected>K</option>
@@ -71,12 +72,8 @@
             <div id="item4a">
                 <table>
                     <tr>
-                        <td>
-                            Output:
-                        </td>
-                        <td>
-                            Concentration cut-off
-                        </td>
+                        <td>Output:</td>
+                        <td>Concentration cut-off</td>
                         <td>
                             <select size=1 name=CUT>
                                 <option value="1E-70" selected>1e-70</option>
@@ -121,65 +118,113 @@
                 <input name="Button" type=button value=Default onClick="default_values();">
                 <INPUT name="submit" type=submit value="Calculate &gt;&gt;">
             </div>
+        </div> 
+               
+        <img src="http://www.groupes.polymtl.ca/log2420/Lab/FactSageh19/loader.gif" alt="Loading" id="loader"> 
+        
+        <table id="output1">
+            <tr>
+                <th>Component</th>
+                <th>Concentration</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+       
+        <table id="output2">
+                <tr>
+                    <th>Component</th>
+                    <th>Unit</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
 
-        </div>
     </div>
     </form>
 
-    <table id="output1">
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-    </tr>
-    </table>
+    
+
+    
 </body>
 
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>

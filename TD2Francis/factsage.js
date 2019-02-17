@@ -1,9 +1,38 @@
 $( "form" ).submit(function( event ) {
     event.preventDefault();
     postData($( this ).serialize());
+    document.getElementById("loader").style.display = "block";
 
 });
   
+function clearform() {
+	document.myform.REACT1.value = "";
+	document.myform.REACT2.value = "";
+	document.myform.REACT3.value = "";
+	document.myform.REACT4.value = "";
+	document.myform.react1n.value = "";
+	document.myform.react2n.value = "";
+	document.myform.react3n.value = "";
+	document.myform.react4n.value = "";
+}
+
+function default_values() {
+    document.myform.TMIN.value = "1000";
+    document.myform.T_units.selectedIndex = 0;
+    document.myform.MASS.selectedIndex = 0;
+    document.myform.P_value.value = "1";
+    document.myform.PRESSURE.selectedIndex = 0;
+    document.myform.CUT.selectedIndex = 0;
+    document.myform.format.selectedIndex = 1;
+    document.myform.DIST.selectedIndex = 0;
+    document.myform.REACT1.value = "Si";
+    document.myform.REACT2.value = "O2";
+    document.myform.REACT3.value = "";
+    document.myform.react1n.value = "";
+    document.myform.react2n.value = "1.5";
+    document.myform.react3n.value = "";
+}
+
 
 function postData(form) {
     fetch("http://localhost:8080", {
@@ -25,10 +54,19 @@ function postData(form) {
 }
 
 function formatData(data) {
+    document.getElementById("output1").style.display = "table";
+    document.getElementById("output2").style.display = "table";
+    document.getElementById("loader").style.display = "none";
     var x = document.querySelectorAll("#output1 td");
-    for (var i = 0; i < data['output1'].length; i++){
+    for (let i = 0; i < data['output1'].length; i++){
         x[i*2].innerHTML = data['output1'][i]['libelle'];
         x[i*2 + 1].innerHTML = data['output1'][i]['concentration'];
+    }
+    var y = document.querySelectorAll("#output2 td");
+    for (let i = 0; i < data['output2'].length; i++){
+        y[i*3].innerHTML = data['output2'][i]['libelle'];
+        y[i*3+1].innerHTML = data['output2'][i]['unite'];
+        y[i*3+2].innerHTML = data['output2'][i]['valeur'];
     }
 }
 
