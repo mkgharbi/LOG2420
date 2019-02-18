@@ -8,13 +8,14 @@
 </head>
 
 <body>
-    <form id="form">
+    <form id="form" name="myform">
         <input type=hidden value=EQUILIB name=PROGRAM>
         <div id="formulaire">
             <div id="item1">Chemical equilibria of an ideal gas with pure solids and liquids</div>
             <div id="item2">
                 <div id="item2a">
-                    T:<input id="TMIN" maxlength=8 size=8 value=1000 name=TMIN> Units:
+                    T:
+                    <input maxlength=8 size=8 value=1000 name=TMIN> Units:
                     <select name="T_units" size="1" id="T_units">
                         <option value="TK" selected>K</option>
                         <option value="TC">C</option>
@@ -46,15 +47,15 @@
                 </div>
                 <div id="species1">
                     Species <br>
-                    <input id="REACT1" maxlength=15 size=5 name=REACT1 value="Si"> +
+                    <input maxlength=15 size=5 name=REACT1 value="Si"> +
                 </div>
                 <div id="mass2">
                     Mass <br>
-                    <input id="react2n" name="react2n" type="text" id="react2n" value="1.5" size="5">
+                    <input name="react2n" type="text" id="react2n" value="1.5" size="5">
                 </div>
                 <div id="species2">
                     Species <br>
-                    <input id="REACT2" maxlength=15 size=5 name=REACT2 value="O2">
+                    <input maxlength=15 size=5 name=REACT2 value="O2">
                 </div>
 
 
@@ -70,12 +71,8 @@
                 <div id="item4a">
                     <table>
                         <tr>
-                            <td>
-                                Output:
-                            </td>
-                            <td>
-                                Concentration cut-off
-                            </td>
+                            <td>Output:</td>
+                            <td>Concentration cut-off</td>
                             <td>
                                 <select size=1 name=CUT>
                                     <option value="1E-70" selected>1e-70</option>
@@ -122,70 +119,111 @@
                 </div>
             </div>
 
-        </div>
+            <img src="http://www.groupes.polymtl.ca/log2420/Lab/FactSageh19/loader.gif" alt="Loading" id="loader">
 
+            <table id="output1">
+                <tr>
+                    <th>Component</th>
+                    <th>Concentration</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+            <table id="output2">
+                <tr>
+                    <th>Component</th>
+                    <th>Unit</th>
+                    <th>Value</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+
+        </div>
     </form>
-    <div>
-        <img id="loading-bar" src="loader.gif" style="display: none;">
-    </div>
-    <table class="output" id="output1" style="display: none;">
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
+
+
+
+
 </body>
 
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
