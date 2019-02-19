@@ -113,6 +113,50 @@ th {
     background-color: #eee478
 }
 
+#clear2 {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(151, 163, 152);
+    border: none;
+    border-radius: 15px;
+}
+
+#clear2:hover {
+    background-color: #c22b2b
+}
+
+#clear2:active {
+    background-color: #c58e29;
+}
+
+#Default {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgb(151, 163, 152);
+    border: none;
+    border-radius: 15px;
+}
+
+#Default:hover {
+    background-color: #be7027
+}
+
+#Default:active {
+    background-color: #c58e29;
+}
+
 #Calculate {
     display: inline-block;
     padding: 15px 25px;
