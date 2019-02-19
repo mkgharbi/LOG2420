@@ -4,7 +4,7 @@
 <head>
     <title>LOG2420 - TD2</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="factsage.css">
+    <link rel="stylesheet" href="ergo-factsage.css">
 </head>
 
 <body>
@@ -15,26 +15,26 @@
             <div id="item2">
                 <div id="item2a">
                     T:
-                    <input maxlength=8 size=8 value=1000 name=TMIN> Units:
+                    <input maxlength=8 size=8 value=1000 id="TMIN" name=TMIN> Units:
                     <select name="T_units" size="1" id="T_units">
-                    <option value="TK" selected>K</option>
-                    <option value="TC" >C</option>
-                </select>
+                        <option value="TK" selected>K</option>
+                        <option value="TC">C</option>
+                    </select>
                 </div>
                 <div id="item2b">
                     Mass:
                     <select size=1 name=MASS>
-                            <option value="X" selected>mole</option>
-                            <option value="%">gram</option>
+                        <option value="X" selected>mole</option>
+                        <option value="%">gram</option>
                     </select>
                 </div>
                 <div id="item2c">
                     P:
                     <input name="P_value" type="text" id="P_value2" value=1 size="4"> Units:
                     <select size=1 name=PRESSURE>
-                    <option value="ATM" selected>atm</option>
-                    <option value="BAR" >bar</option>
-                </select>
+                        <option value="ATM" selected>atm</option>
+                        <option value="BAR">bar</option>
+                    </select>
                     <input type=hidden value=tk name=TEMPERATURE>
                     <input type=hidden value=noaqua name=AQUEOUS>
                 </div>
@@ -47,7 +47,7 @@
                 </div>
                 <div id="species1">
                     Species <br>
-                    <input maxlength=15 size=5 name=REACT1 value="Si"> +
+                    <input maxlength=15 size=5 id="REACT1" name=REACT1 value="Si"> +
                 </div>
                 <div id="mass2">
                     Mass <br>
@@ -55,7 +55,7 @@
                 </div>
                 <div id="species2">
                     Species <br>
-                    <input maxlength=15 size=5 name=REACT2 value="O2">
+                    <input maxlength=15 size=5 id="REACT2" name=REACT2 value="O2">
                 </div>
 
 
@@ -75,16 +75,16 @@
                             <td>Concentration cut-off</td>
                             <td>
                                 <select size=1 name=CUT>
-                                <option value="1E-70" selected>1e-70</option>
-                                <option value="1E-50" >1e-50</option>
-                                <option value="1E-30" >1e-30</option>
-                                <option value="1E-20" >1e-20</option>
-                                <option value="1E-15" >1e-15</option>
-                                <option value="1E-10" >1e-10</option>
-                                <option value="1E-8" >1e-8</option>
-                                <option value="1E-6" >1e-6</option>
-                                <option value="1E-5" >1e-5</option> 
-                            </select>
+                                    <option value="1E-70" selected>1e-70</option>
+                                    <option value="1E-50">1e-50</option>
+                                    <option value="1E-30">1e-30</option>
+                                    <option value="1E-20">1e-20</option>
+                                    <option value="1E-15">1e-15</option>
+                                    <option value="1E-10">1e-10</option>
+                                    <option value="1E-8">1e-8</option>
+                                    <option value="1E-6">1e-6</option>
+                                    <option value="1E-5">1e-5</option>
+                                </select>
                                 <input type=hidden value="Calculate &gt;&gt;" name=submit>
                             </td>
                         </tr>
@@ -93,10 +93,10 @@
                             <td>Format</td>
                             <td>
                                 <select name=format size=1 id="select">
-                                <option value="OUTC" >ChemSage</option>
-                                <option value="OUTB" selected>Extended</option>
-                                <option value="OUTF" >FACT</option>
-                            </select>
+                                    <option value="OUTC">ChemSage</option>
+                                    <option value="OUTB" selected>Extended</option>
+                                    <option value="OUTF">FACT</option>
+                                </select>
                             </td>
                         </tr>
                         <tr>
@@ -104,10 +104,10 @@
                             <td>Distribution</td>
                             <td>
                                 <select size=1 name=DIST>
-                                DIST =  
-                                <option value="NODIST" selected>no</option>
-                                <option value="DIST" >yes</option>
-                         </select></td>
+                                    DIST =
+                                    <option value="NODIST" selected>no</option>
+                                    <option value="DIST">yes</option>
+                                </select></td>
                         </tr>
                     </table>
 
@@ -115,7 +115,7 @@
                 <div id="item4b">
                     <input name="clear" type="button" id="clear2" value="Clear" onClick="clearform();">
                     <input name="Button" type=button value=Default onClick="default_values();">
-                    <INPUT name="submit" type=submit value="Calculate &gt;&gt;">
+                    <INPUT name="submit" id="Calculate" type=submit value="Calculate &gt;&gt;">
                 </div>
             </div>
 
@@ -227,6 +227,6 @@
 </body>
 
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="factsage.js"></script>
+<script src="ergo-factsage.js"></script>
 
 </html>
