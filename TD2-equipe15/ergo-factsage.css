@@ -125,6 +125,7 @@ th {
     background-color: rgb(151, 163, 152);
     border: none;
     border-radius: 15px;
+    margin-left: 10px;
 }
 
 #clear2:hover {
@@ -147,6 +148,7 @@ th {
     background-color: rgb(151, 163, 152);
     border: none;
     border-radius: 15px;
+    margin-left: 5px;
 }
 
 #Default:hover {
@@ -169,6 +171,8 @@ th {
     background-color: #4CAF50;
     border: none;
     border-radius: 15px;
+    margin-bottom: 5px;
+    margin-left: 10px;
 }
 
 #Calculate:hover {
@@ -177,5 +181,4 @@ th {
 
 #Calculate:active {
     background-color: #3e8e41;
-    transform: translateY(5px);
 }
