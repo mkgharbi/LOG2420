@@ -1,5 +1,3 @@
-//Done 
-
 
 function clearform() {
     document.getElementById("REACT1").value = "";
@@ -30,11 +28,9 @@ function postData(form) {
         // À noter, la fonction .json() provoquait une SyntaxError
         // Cette erreur semblait être causée par l'absence de guillemets autour des éléments de data-output.json.
         // Nous avons donc pris la liberté de modifier le fichier en ajoutant des guillemets, faute d'avoir
-        // une autre solution évidente sous la main.
+        // une autre solution évidente sous la main. La version modifiée de data-output.json est incluse dans le zip.
         .then((response) => response.json())
         .then(data => {
-            console.log(data);
-            console.log(data['output1'][3]['libelle']);
             formatData(data);
         })
 

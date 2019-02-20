@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto auto auto auto;
-    background-color: #ccccca;
+    background-color: #f3e5a5;
     border: 1px solid black;
 }
 
@@ -12,13 +12,14 @@ table {
 
 #item1 {
     border: 1px solid black;
+    background-color: #f3e5a5;
     grid-column: 1 / 2;
     grid-row: 1 / 2;
     margin: 3px;
 }
 
 #item2 {
-    background-color: #f4f55b;
+    background-color: #fcfa53;
     border: 1px solid black;
     margin: 3px;
     padding: 5px;
@@ -30,7 +31,7 @@ table {
 }
 
 #item3 {
-    background-color: #f4eda5;
+    background-color: #fffd77;
     border: 2px solid black;
     margin: 3px;
     padding: 5px;
@@ -63,8 +64,6 @@ table {
 
 #item4 {
     background-color: #f3e5a5;
-    border: 2px solid black;
-    margin: 3px;
     padding: 5px;
     grid-column: 1/2;
     grid-row: 4/5;
@@ -94,7 +93,7 @@ img {
 #output1,
 #output2 {
     display: none;
-    background-color: #f4eda5;
+    background-color: #fffea2;
     margin: 3px;
     border: 2px solid black;
     border-collapse: collapse;
@@ -110,13 +109,13 @@ img {
 }
 
 th {
-    background-color: #eee478
+    background-color: #fffd77;
 }
 
 #clear2 {
     display: inline-block;
-    padding: 15px 25px;
-    font-size: 24px;
+    padding: 10px 20px;
+    font-size: 19px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -126,20 +125,15 @@ th {
     border: none;
     border-radius: 15px;
     margin-left: 10px;
+    margin-bottom: 5px;
 }
 
-#clear2:hover {
-    background-color: #c22b2b
-}
 
-#clear2:active {
-    background-color: #c58e29;
-}
 
 #Default {
     display: inline-block;
-    padding: 15px 25px;
-    font-size: 24px;
+    padding: 10px 20px;
+    font-size: 19px;
     cursor: pointer;
     text-align: center;
     text-decoration: none;
@@ -151,17 +145,17 @@ th {
     margin-left: 5px;
 }
 
-#Default:hover {
+#Default:hover, #clear2:hover{
     background-color: #be7027
 }
 
-#Default:active {
+#Default:active, #clear2:active {
     background-color: #c58e29;
 }
 
 #Calculate {
     display: inline-block;
-    padding: 15px 25px;
+    padding: 10px 20px;
     font-size: 24px;
     cursor: pointer;
     text-align: center;

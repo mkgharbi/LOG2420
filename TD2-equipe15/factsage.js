@@ -1,4 +1,7 @@
-//Done 
+// Important: le .js à été fait avant la mise à jour de l'output-data.json,
+// donc à partir du fichier mal formatté. Certaines données sont donc absentes
+// des tableaux de résultats, mais les données qui étaient disponibles ont tout
+// de même été disposé suivant la structure du TD1.
 
 
 function clearform() {
@@ -30,14 +33,11 @@ function postData(form) {
         // À noter, la fonction .json() provoquait une SyntaxError
         // Cette erreur semblait être causée par l'absence de guillemets autour des éléments de data-output.json.
         // Nous avons donc pris la liberté de modifier le fichier en ajoutant des guillemets, faute d'avoir
-        // une autre solution évidente sous la main.
+        // une autre solution évidente sous la main. La version modifiée de data-output.json est incluse dans le zip.
         .then((response) => response.json())
         .then(data => {
-            console.log(data);
-            console.log(data['output1'][3]['libelle']);
             formatData(data);
         })
-
     .catch(function(error) {
         console.log(error);
     })
