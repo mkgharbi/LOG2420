@@ -1,0 +1,28 @@
+Objet
+
+objet littéral: structure dans variable
+permis pour standin pour objet
+
+renforcer types nous-même 
+
+m=classe, v=classe, c=classe
+
+dans vue: fonctions pour changer DOM
+
+updateView()
+
+m: store l'état application, trigger différent viewObject. dit au view, met-toi à jour
+
+c: eventListener pour les évènement dans le DOM. recevoir évènement du DOM, linker à une fonction de M,
+
+---
+
+instancier websocket
+
+ws.onmessage((message)=> {
+message.data //on travaille sur le data, json. event type dans data.
+switch case selon event type
+})
+
+pour envoyer, envoyer instance class message.
+json.stringify(message)

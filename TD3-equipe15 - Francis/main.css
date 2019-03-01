@@ -1,0 +1,8 @@
+#header1 {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: auto;
+}
+#header2 {
+    background-color: #5f9ea0 ;
+}
