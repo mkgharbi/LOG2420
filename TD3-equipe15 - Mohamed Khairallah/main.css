@@ -1,0 +1,162 @@
+body {
+    height: auto;
+    display: grid;
+    grid-template-rows: 30% 70%;
+    grid-template-columns: auto;
+    float: bottom;
+}
+
+#header {
+    background-color: #eeeeee;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 75% 25%;
+    grid-template-rows: auto;
+}
+
+#PolyChat {
+    text-align: left;
+    font-size: 60px;
+    margin-left: 25px;
+}
+
+#Poly {
+    color: #ff671b;
+    float: left;
+}
+
+#users {
+    width: 3%;
+    margin-top: 35px;
+    float: left;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+}
+
+#Chat {
+    color: #0295d3;
+    float: left;
+}
+
+#iconeUser {
+    width: 15%;
+    float: left;
+    margin-left: 8px;
+    margin-right: 25px;
+    margin-top: 20px;
+}
+
+#notfication {
+    width: 15%;
+    float: left;
+    margin-right: 25px;
+    margin-top: 20px;
+}
+
+#web {
+    width: 15%;
+    float: left;
+    margin-right: 25px;
+    margin-top: 20px;
+}
+
+#iconeSetting {
+    width: 15%;
+    float: left;
+    margin-right: 25px;
+    margin-top: 20px;
+}
+
+#UserName {
+    margin-left: 3px;
+    color: rgb(19, 126, 19);
+}
+
+#Setting {
+    float: buttom;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 50% 50%;
+}
+
+#templateGroupe {
+    margin-top: 34px;
+    height: auto;
+    float: left;
+    display: grid;
+    grid-template-columns: 65% 35%;
+    grid-template-rows: auto;
+}
+
+#leftSide {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 25% 75%;
+    border: 0.75px solid white;
+}
+
+#upperSideLeft {
+    background-color: #5f9ea0;
+    height: 80px;
+    color: white;
+}
+
+#groupeActif {
+    margin-top: 8px;
+    margin-left: 10px;
+    font-size: small;
+}
+
+#nomGroupe {
+    margin-top: 15px;
+    margin-left: 10px;
+    font-size: 25px;
+}
+
+#rightSide {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 25% 75%;
+    border: 0.75px solid white;
+}
+
+#upperRightSide {
+    display: grid;
+    height: 80px;
+    grid-template-columns: 70% 30%;
+    background-color: #5f9ea0;
+}
+
+#upperSideRightLeft {
+    float: right;
+    color: white;
+}
+
+#ListGroup {
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: small;
+}
+
+#groupesDisponibles {
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 25px;
+}
+
+#upperSideRightRight {
+    margin-top: 33px;
+}
+
+#plus {
+    width: 20%;
+    margin-right: 20px;
+}
+
+#settingWhite {
+    width: 20%;
+}
+
+#mainRightSide {
+    border: 1px solid black;
+}
