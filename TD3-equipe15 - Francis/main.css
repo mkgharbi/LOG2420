@@ -1,8 +1,28 @@
 #header1 {
     display: grid;
     grid-template-columns: 75% 25%;
-    grid-template-rows: auto;
+    background-color : #eeeeee;
 }
 #header2 {
     background-color: #5f9ea0 ;
+}
+
+#logo div{
+    display: inline;
+}
+#logoPoly{
+    color: #ff671b;
+}
+
+#logo:nth-child(2) {
+    display: inline;
+}
+
+#logoChat{
+    display: inline;
+    color: #0295d3;
+}
+
+#icones div {
+    display: inline;
 }
