@@ -1,7 +1,7 @@
-body {
+#webpage {
     height: auto;
     display: grid;
-    grid-template-rows: 30% 70%;
+    grid-template-rows: 25% 75%;
     grid-template-columns: auto;
 }
 
@@ -39,7 +39,6 @@ body {
 
 #iconeUser {
     width: 15%;
-    float: left;
     margin-left: 8px;
     margin-right: 25px;
     margin-top: 20px;
@@ -47,21 +46,18 @@ body {
 
 #notfication {
     width: 15%;
-    float: left;
     margin-right: 25px;
     margin-top: 20px;
 }
 
 #web {
     width: 15%;
-    float: left;
     margin-right: 25px;
     margin-top: 20px;
 }
 
 #iconeSetting {
     width: 15%;
-    float: left;
     margin-right: 25px;
     margin-top: 20px;
 }
@@ -72,7 +68,6 @@ body {
 }
 
 #Setting {
-    float: buttom;
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 50% 50%;
@@ -91,7 +86,7 @@ body {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 25% 75%;
-    border: 0.75px solid white;
+    border-right: 1px solid white;
 }
 
 #upperSideLeft {
@@ -116,7 +111,6 @@ body {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: 25% 75%;
-    border: 0.75px solid white;
 }
 
 #upperRightSide {
@@ -131,7 +125,7 @@ body {
     color: white;
 }
 
-#ListGroup {
+#ListeDesGroupes {
     margin-top: 5px;
     margin-left: 10px;
     font-size: small;
@@ -156,6 +150,9 @@ body {
     width: 20%;
 }
 
-#mainRightSide {
+#listeGroupe {
     border: 1px solid black;
+    margin-top: 40px;
+    margin-left: 30px;
+    margin-right: 35px;
 }
