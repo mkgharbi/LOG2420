@@ -3,7 +3,6 @@ body {
     display: grid;
     grid-template-rows: 30% 70%;
     grid-template-columns: auto;
-    float: bottom;
 }
 
 #header {
