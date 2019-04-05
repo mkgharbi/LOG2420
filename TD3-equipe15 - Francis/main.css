@@ -1,3 +1,6 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
 #header1 {
     display: grid;
     grid-template-columns: 75% 25%;
@@ -5,24 +8,46 @@
 }
 #header2 {
     background-color: #5f9ea0 ;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    color: white;
 }
 
+#logo {
+    margin-left: 10px;
+    font-weight: lighter;
+}
 #logo div{
     display: inline;
 }
 #logoPoly{
     color: #ff671b;
 }
-
-#logo:nth-child(2) {
-    display: inline;
+#logologo{
+    color: #363636;
 }
-
 #logoChat{
-    display: inline;
     color: #0295d3;
 }
 
+#icones {
+    margin-top: 25px;
+    margin-bottom: 2px;
+    font-size: 30px;
+    color: #363636;
+}
 #icones div {
     display: inline;
+    margin: 5px;
+}
+#username {
+    color: green;
+    font-size: 10px;
+}
+#header2 div {
+    margin-left: 8px;
+}
+
+#groupeActif {
+    border-right: 2px solid #eeeeee;
 }
