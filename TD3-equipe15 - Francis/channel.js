@@ -12,7 +12,7 @@ class Channel {
      * @param {string} name - The name of the channel.
      * @param {boolean} status - Since we are sending this DTO to the clients, it will help us to not send too more data
      *  True, if the end user joined this channel / False if not.
-     * @param {Array<string>} messages - The list the of the messages in the channel.
+     * @param {Array<Messsage>} messages - The list the of the messages in the channel.
      * @param {number} numberOfUsers - Count the users in the channel.
      */
     constructor(id, name, status, messages, numberOfUsers) {
