@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>PolyChat</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script src="main.js"></script>
+</head>
+
+<body>
+    <header id="header1">
+        <h1 id="logo" href="#" onclick="window.location.reload(true);">
+            <div id="logoPoly">
+                Poly
+            </div>
+            <div id="logologo">
+                <i class="fas fa-users"></i>
+            </div>
+            <div id="logoChat">
+                Chat
+            </div>
+        </h1>
+        <div>
+            <div id="icones">
+                <div><i class="far fa-user"></i>
+                </div>
+                <div><i class="far fa-bell"></i></div>
+                <div><i class="fas fa-globe"></i></div>
+                <div><i class="fas fa-cog"></i></div>
+            </div>
+            <div id="username">username</div>
+        </div>
+    </header>
+    <header id="header2">
+        <div id="groupeActif">
+            <p>Groupe actif:</p>
+            <h2>GroupeActif</h2>
+        </div>
+        <div id="listeGroupes">
+            <p>Liste des groupes</p>
+            <h2>Groupes disponibles</h2>
+        </div>
+
+    </header>
+    <div id="dynamicViews">
+        <div id="chat">
+            <div id="ChatZone">
+
+            </div>
+            <div id="input-zone">
+                <i id="thumbsUp" class="far fa-thumbs-up" onclick="thumbsUp()"></i>
+                <input id="message-input" placeholder="Type a message..." />
+                <button type="submit" id="submitButton" style="color:white;" onsubmit="sendNewMessage()">Envoyer</button>
+            </div>
+        </div>
+        <div id="dynamicChannelList">
+            <div class="channel">
+                <div class="plusIcon"><i class="fas fa-plus"></i></div>
+                <div class=channelName> Général </div>
+            </div>
+            <div class="channel">
+                <div class="minusIcon"><i class="fas fa-minus"></i></div>
+                <div class="channelName"> Groupe 1 </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="message.js"></script>
+    <script src="channel.js"></script>
+
+    <script src="channelsObserver.js"></script>
+    <script src="connectionHandler.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

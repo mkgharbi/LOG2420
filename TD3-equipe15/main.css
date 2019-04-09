@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#header1 {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    background-color: #eeeeee;
+}
+
+#header2 {
+    background-color: #5f9ea0;
+    display: grid;
+    grid-template-columns: 60% 40%;
+    color: white;
+}
+
+#dynamicViews {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+#logo {
+    margin-left: 10px;
+    font-weight: lighter;
+}
+
+#logo div {
+    display: inline;
+}
+
+#logoPoly {
+    color: #ff671b;
+}
+
+#logologo {
+    color: #363636;
+}
+
+#logoChat {
+    color: #0295d3;
+}
+
+#icones {
+    margin-top: 25px;
+    margin-bottom: 2px;
+    font-size: 30px;
+    color: #363636;
+}
+
+#icones div {
+    display: inline;
+    margin: 5px;
+}
+
+#username {
+    color: green;
+    font-size: 10px;
+}
+
+#header2 div {
+    margin-left: 8px;
+}
+
+#groupeActif {
+    border-right: 2px solid #eeeeee;
+}
+
+#dynamicChannelList {
+    font-size: 25px;
+}
+
+#dynamicChannelList>div {
+    background-color: #f8f8f8;
+}
+
+.channel div {
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.plusIcon {
+    color: #ff5900;
+}
+
+
+/* ----- Chat grid */
+
+#chat {
+    display: grid;
+    grid-template-rows: 65% 35%;
+}
+
+
+/*------ Text Box */
+
+#thumbsUp {
+    background-color: #5f9ea0;
+    color: white;
+    float: left;
+    height: 16%;
+    width: 10%;
+}
+
+#message-input {
+    width: 70%;
+}
+
+
+/* ------- submit Button ---- */
+
+#submitButton {
+    display: inline-block;
+    padding: 13px 23px;
+    font-size: 13px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    background-color: #5f9ea0;
+    border: none;
+    border-radius: 10px;
+}
+
+#submitButton:hover {
+    background-color: #5f9ea0
+}
+
+#submitButton:active {
+    background-color: #5f9ea0;
+    transform: translateY(2px);
+}
