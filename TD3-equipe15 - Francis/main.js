@@ -1,14 +1,76 @@
 class ChannelView {
-    updateChannelList(channels){
+    updateChannelList(unsortedChannels){
         console.log("Update la channel list avec");
-        console.log(channels);    
+        console.log(unsortedChannels);    
+        
+        //Sorting
+        let channels = [];
+        channels.push(unsortedChannels[0]);
+        for (let i = 1; i < unsortedChannels.length; i++) {
+            if (unsortedChannels[i].joinStatus == true) {
+                channels.push(unsortedChannels[i]);
+            }
+        }
+        for (let i = 1; i < unsortedChannels.length; i++) {
+            if (unsortedChannels[i].joinStatus == false) {
+                channels.push(unsortedChannels[i]);
+            }
+        }
+
+
+        let parent = document.getElementById("dynamicChannelList");
+        while (parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+       
         for (let i = 0; i < channels.length; i++) {
-            var para = document.createElement("div");
-            var node = document.createTextNode(channels[i].name);
-            para.setAttribute("id", channels[i].id);
-            para.appendChild(node);
-            let element = document.getElementById("dynamicChannelList");
-            element.appendChild(para);
+            let channel = channels[i];
+            let newChannel = document.createElement("div");
+            newChannel.setAttribute("class", "channel");
+            newChannel.setAttribute("id", channel.id);
+
+            let icon = document.createElement("div");
+            if (i == 0) {
+                icon.setAttribute("class", "starIcon");
+                let iconRef = document.createElement("i");
+                iconRef.setAttribute("class", "fas fa-star");
+                icon.appendChild(iconRef);
+              
+
+            }
+            else if (channel.joinStatus == true) {
+                icon.setAttribute("onclick", "leaveChannel(this.parentElement)");
+                icon.setAttribute("class", "minusIcon");
+                let iconRef = document.createElement("i");
+                iconRef.setAttribute("class", "fas fa-minus");
+                icon.appendChild(iconRef);
+            }
+            else {
+                icon.setAttribute("onclick", "joinChannel(this.parentElement)");
+                icon.setAttribute("class", "plusIcon");
+                let iconRef = document.createElement("i");
+                iconRef.setAttribute("class", "fas fa-plus");
+                icon.appendChild(iconRef);
+            }
+
+            newChannel.append(icon);
+            let channelName = document.createElement("div");
+            channelName.setAttribute("class", "channelName");
+            channelName.setAttribute("onclick", "selectChannel(this.parentElement)");
+            let channelNameText = document.createTextNode(channel.name);
+            channelName.appendChild(channelNameText);
+            newChannel.appendChild(channelName);
+
+            if (i == 0) {
+                let defaultNode = document.createElement("div");
+                defaultNode.setAttribute("class", "default");
+                let defaultNodeText = document.createTextNode("défaut");
+                defaultNode.appendChild(defaultNodeText);
+                newChannel.appendChild(defaultNode);
+            }
+
+            
+            parent.appendChild(newChannel);
         }
     }
 
@@ -55,6 +117,10 @@ class Model {
             this.firstConnexion = false;
         }
         view.channelView.updateChannelList(channels);
+    }
+
+    getChannelById(id) {
+        for ()
     }
 
     addActiveChannel(channel) {
@@ -104,11 +170,14 @@ class Model {
 var model = new Model();
 
 function joinChannel(parent) {
-    console.log(parent.id);
+    sendJoinRequest(parent.id, model.userName);
 }
 
+function leaveChannel(parent) {
+    sendLeaveRequest(parent.id, model.userName);
+}
 function selectChannel(parent) {
-    console.log(parent.id);
+    model.set
 }
 
 /*

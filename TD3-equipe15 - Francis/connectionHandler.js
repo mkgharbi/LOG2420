@@ -22,7 +22,7 @@ ws.onmessage = function (event) {
         case "updateChannelsList":
             console.log("update les channels");
             model.setChannels(message.data);
-            
+            /*
             console.log(model.isActive("allo"));
             let bobo = new Channel("allo");
             console.log(bobo);
@@ -31,6 +31,7 @@ ws.onmessage = function (event) {
             
             let amessage = new Message("onGetChannel", "dbf646dc-5006-4d9f-8815-fd37514818ee");
             ws.send(JSON.stringify(amessage));
+            */
             break;
         case "onJoinChannel":
             console.log("JoinChannel");
@@ -50,4 +51,12 @@ ws.onmessage = function (event) {
     };
 }
 
+function sendJoinRequest(channelId, user) {
+    let joinRequest = new Message("onJoinChannel", channelId, null, user);
+    ws.send(JSON.stringify(joinRequest));
+}
 
+function sendLeaveRequest(channelId, user) {
+    let leaveRequest = new Message("onLeaveChannel", channelId);
+    ws.send(JSON.stringify(leaveRequest));
+}

@@ -74,12 +74,17 @@ body{
     color: #ff5900;
 }
 
+.plusIcon {
+    cursor: pointer;
+}
 .minusIcon {
     color: #4e9fa0;
+    cursor: pointer;
 }
 
 .channelName{
     color: #386bb8;
+    cursor: pointer;
 }
 
 .channel:nth-child(odd) {
