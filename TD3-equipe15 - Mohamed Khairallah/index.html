@@ -2,7 +2,12 @@
 <html>
 <link rel="stylesheet" href="main.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
+<script src="message.js"></script>
+<script src="channel.js"></script>
+<script src="messagesObserver.js"></script>
+<script src="channelsObserver.js"></script>
+<script src="connectionHandler.js"></script>
+<script src="main.js"></script>
 
 
 <body>
@@ -44,14 +49,28 @@
                     <div id="groupeActif"> Groupe Actif : </div>
                     <div id="nomGroupe"> nomGroupe </div>
                 </div>
+
                 <div id="mainLeftSide">
+                    <div id="chatContainer">
+                        <div id="Chat"></div>
+                    </div>
+                    <div id="input">
+                        <div>
+                            <div id="like" onclick="functionLike()">
+                                <img id="likeImage" src="img/like.png" alt="settings" />
+                            </div>
+                            <textarea id="messageInput"></textarea>
+                            <button type="submit" id="submitButton">Envoyer</button>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div id="rightSide ">
                 <div id="upperRightSide">
                     <div id="upperSideRightLeft">
                         <div id="ListeDesGroupes"> Liste des groupes </div>
-                        <div id="groupesDisponibles"> Groupes disponbiles </div>
+                        <div id="groupesDisponibles"> Groupes disponibles </div>
                     </div>
                     <div id="upperSideRightRight">
                         <img id="plus" src="img/plus.png" />
