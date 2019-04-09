@@ -1,18 +1,37 @@
 class ChannelView {
     updateChannelList(channels){
         console.log("Update la channel list avec");
-        console.log(channels);
+        console.log(channels);    
+        for (let i = 0; i < channels.length; i++) {
+            var para = document.createElement("div");
+            var node = document.createTextNode(channels[i].name);
+            para.setAttribute("id", channels[i].id);
+            para.appendChild(node);
+            let element = document.getElementById("dynamicChannelList");
+            element.appendChild(para);
+        }
     }
+
     updateCurrentChannel(channel){
         console.log("Change le nom channel pour");
         console.log(channel.name);
+    
+    }
+
+    addChannel(channel){
+
     }
 }
 
 class MessageView {
-    update(){
+    loadChannel(channel){
         console.log("channelALLO")
     }
+
+    addMessage(message) {
+
+    }
+
 }
 
 class View {
@@ -64,12 +83,18 @@ class Model {
     setCurrentChannel(channel){
         this.currentChannel = channel;
         view.channelView.updateCurrentChannel(channel);
+        view.messageView.loadChannel(channel);
     }
 
     addMessage(message) {
         if (this.isActive(message.channelId) == true) {
             let index = getIndexActiveChannel(message.channelId);
-            this.activeChannels[index].messages.push(message);        
+            this.activeChannels[index].messages.push(message);
+            
+            if (this.currentChannel.id == message.channelId){
+                view.messageView.addMessage(message);
+            }
+            
         }
     }
   

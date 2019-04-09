@@ -13,6 +13,10 @@ body{
     color: white;
 }
 
+#dynamicViews {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
 #logo {
     margin-left: 10px;
     font-weight: lighter;
@@ -51,3 +55,24 @@ body{
 #groupeActif {
     border-right: 2px solid #eeeeee;
 }
+
+
+#dynamicChannelList {
+    font-size: 25px;
+}
+#dynamicChannelList>div{
+    background-color: #f8f8f8;
+}
+
+.channel div{
+    display: inline-block;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.plusIcon {
+    color: #ff5900;
+}
+
+.
