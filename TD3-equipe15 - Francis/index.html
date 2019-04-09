@@ -42,12 +42,19 @@
         </div>
         
     </header>
+
     <div id = "dynamicViews">
         <div id = "chat"></div>
         <div id = "dynamicChannelList">
             <div class = "channel">
-                <div class = "plusIcon"><i class="fas fa-plus"></i></div>
+                <div class = "starIcon"><i class="fas fa-star"></i></div>
                 <div class = channelName> Général </div> 
+                <div class = "default"> défaut</div>
+            </div>
+            <div id = "channelIDwootwoot" class = "channel">
+                <div class = "plusIcon" onclick="joinChannel(this.parentElement)"><i class="fas fa-plus"></i></div>
+                <div class = "channelName" onclick="selectChannel(this.parentElement)"> Général </div> 
+                
             </div>
             <div class = "channel">
                 <div class = "minusIcon"><i class="fas fa-minus"></i></div>
@@ -59,7 +66,15 @@
         </div>
     </div>
 
-    
+    <script>
+    function joinChannel(parent) {
+    console.log(parent.id);
+}
+
+function selectChannel(parent) {
+    console.log(parent.id);
+}
+    </script>
     <script src ="message.js"></script>
     <script src ="channel.js"></script>
     

@@ -59,10 +59,9 @@ body{
 
 #dynamicChannelList {
     font-size: 25px;
+    padding: 10px;
 }
-#dynamicChannelList>div{
-    background-color: #f8f8f8;
-}
+
 
 .channel div{
     display: inline-block;
@@ -71,8 +70,32 @@ body{
     margin-bottom: 10px;
 }
 
-.plusIcon {
+.plusIcon, .starIcon {
     color: #ff5900;
 }
 
-.
+.minusIcon {
+    color: #4e9fa0;
+}
+
+.channelName{
+    color: #386bb8;
+}
+
+.channel:nth-child(odd) {
+    background-color: #f8f8f8;
+}
+
+.channel:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+.default {
+    font-size: 15px;
+    font-style: italic;
+    color: #0087d5;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #0087d5;
+    padding: 3px 8px; 
+}

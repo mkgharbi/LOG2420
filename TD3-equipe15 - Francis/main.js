@@ -103,7 +103,13 @@ class Model {
 
 var model = new Model();
 
+function joinChannel(parent) {
+    console.log(parent.id);
+}
 
+function selectChannel(parent) {
+    console.log(parent.id);
+}
 
 /*
 class Controller {
