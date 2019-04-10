@@ -68,10 +68,7 @@ body {
 
 #dynamicChannelList {
     font-size: 25px;
-}
-
-#dynamicChannelList>div {
-    background-color: #f8f8f8;
+    padding: 10px;
 }
 
 .channel div {
@@ -81,8 +78,100 @@ body {
     margin-bottom: 10px;
 }
 
-.plusIcon {
+.plusIcon,
+.starIcon {
     color: #ff5900;
+}
+
+.plusIcon {
+    cursor: pointer;
+}
+
+.minusIcon {
+    color: #4e9fa0;
+    cursor: pointer;
+}
+
+.channelName {
+    color: #386bb8;
+    cursor: pointer;
+}
+
+.channel:nth-child(odd) {
+    background-color: #f8f8f8;
+}
+
+.channel:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+.default {
+    font-size: 15px;
+    font-style: italic;
+    color: #0087d5;
+    background-color: #ffffff;
+    border-radius: 10px;
+    border: 2px solid #0087d5;
+    padding: 3px 8px;
+}
+
+
+/* ------ ChatBox Grid */
+
+#ChatZone {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+ul li {
+    display: inline-block;
+    clear: both;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 0px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.messageContentHim {
+    background: #eee;
+    float: left;
+}
+
+.messageContentMe {
+    float: bottom;
+    background: #0295d3;
+    color: #fff;
+}
+
+.messageContentHim+.messageContentMe {
+    border-bottom-right-radius: 5px;
+}
+
+.messageContentMe+.messageContentMe {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.messageContentMe:last-of-type {
+    border-bottom-right-radius: 30px;
+}
+
+.MessengeHim {
+    float: bottom;
+    display: grid;
+    grid-auto-rows: 10% 80% 10%;
+}
+
+.MessengeMe {
+    margin-right: 10px;
+    align-content: right;
+    float: right;
+    display: grid;
+    grid-auto-rows: 80% 20%;
+}
+
+.identifier {
+    color: #a3a3b0;
 }
 
 
@@ -90,22 +179,26 @@ body {
 
 #chat {
     display: grid;
-    grid-template-rows: 65% 35%;
+    grid-template-rows: 70% 30%;
 }
 
 
-/*------ Text Box */
+/*------ Text Box ------------ */
 
 #thumbsUp {
     background-color: #5f9ea0;
     color: white;
     float: left;
-    height: 16%;
+    text-align: center;
+    font-size: 35px;
+    height: 105%;
     width: 10%;
 }
 
 #message-input {
-    width: 70%;
+    width: 76%;
+    height: 100%;
+    margin-left: 3px;
 }
 
 
@@ -113,7 +206,7 @@ body {
 
 #submitButton {
     display: inline-block;
-    padding: 13px 23px;
+    padding: 20px 32px;
     font-size: 13px;
     cursor: pointer;
     text-align: center;
@@ -121,7 +214,6 @@ body {
     outline: none;
     background-color: #5f9ea0;
     border: none;
-    border-radius: 10px;
 }
 
 #submitButton:hover {

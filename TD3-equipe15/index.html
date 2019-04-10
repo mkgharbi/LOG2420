@@ -36,7 +36,7 @@
     <header id="header2">
         <div id="groupeActif">
             <p>Groupe actif:</p>
-            <h2>GroupeActif</h2>
+            <h2>Groupe Actif</h2>
         </div>
         <div id="listeGroupes">
             <p>Liste des groupes</p>
@@ -44,10 +44,28 @@
         </div>
 
     </header>
+
     <div id="dynamicViews">
         <div id="chat">
             <div id="ChatZone">
-
+                <div class="chatBoxUser">
+                    <ul class="MessengeHim">
+                        <li class="identifier"> Him
+                        </li>
+                        <li class="messageContentHim">By Other User</li>
+                        <li4 class="temps" style="size:2px;">
+                            time1
+                        </li4>
+                    </ul>
+                </div>
+                <div class="chatBoxOther">
+                    <ul class="MessengeMe">
+                        <li class="messageContentMe">By this User, first message</li>
+                        <li class="temps" style="text-align:right;">
+                            time2
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div id="input-zone">
                 <i id="thumbsUp" class="far fa-thumbs-up" onclick="thumbsUp()"></i>
@@ -56,17 +74,27 @@
             </div>
         </div>
         <div id="dynamicChannelList">
+
             <div class="channel">
-                <div class="plusIcon"><i class="fas fa-plus"></i></div>
+                <div class="starIcon"><i class="fas fa-star"></i></div>
                 <div class=channelName> Général </div>
+                <div class="default"> défaut</div>
+            </div>
+            <div id="channelIDwootwoot" class="channel">
+                <div class="plusIcon" onclick="joinChannel(this.parentElement)"><i class="fas fa-plus"></i></div>
+                <div class="channelName" onclick="selectChannel(this.parentElement)"> Général </div>
+
             </div>
             <div class="channel">
                 <div class="minusIcon"><i class="fas fa-minus"></i></div>
                 <div class="channelName"> Groupe 1 </div>
             </div>
+            <div>
+
+            </div>
+
         </div>
     </div>
-
 
     <script src="message.js"></script>
     <script src="channel.js"></script>
