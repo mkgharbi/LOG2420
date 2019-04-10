@@ -52,6 +52,24 @@ body{
     margin-left: 8px;
 }
 
+#menuGroupe {
+    display: grid;
+    grid-template-columns: 75% 25%;
+}
+
+#menuGroupeIcones {
+    justify-self: end;
+    align-self: center;
+    margin-right: 13px;
+    font-size: 25px;
+}
+
+#menuGroupeIcones i{
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+
 #groupeActif {
     border-right: 2px solid #eeeeee;
 }

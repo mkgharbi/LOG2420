@@ -40,23 +40,35 @@ ws.onmessage = function (event) {
             console.log("LeaveChannel");
             break;
         case "onError":
-            console.log("error");
+            console.log("ERREUR");
+            console.log(message.data);
+            model.handleError(message.data);
             break;
         case "onGetChannel":
-            console.log("getChannel");
-            console.log(message.data);
-            model.addActiveChannel(message.data);
+            //console.log("getChannel");
+            //console.log(message.data);
+            model.setCurrentChannel(message.data);
             break;
 
     };
 }
 
-function sendJoinRequest(channelId, user) {
-    let joinRequest = new Message("onJoinChannel", channelId, null, user);
+function sendJoinRequest(channelId) {
+    let joinRequest = new Message("onJoinChannel", channelId);
     ws.send(JSON.stringify(joinRequest));
 }
 
-function sendLeaveRequest(channelId, user) {
+function sendLeaveRequest(channelId) {
     let leaveRequest = new Message("onLeaveChannel", channelId);
     ws.send(JSON.stringify(leaveRequest));
+}
+
+function getChannelRequest(channelId) {
+    let channelRequest = new Message("onGetChannel", channelId);
+    ws.send(JSON.stringify(channelRequest));
+}
+
+function addChannelRequest(channelName) {
+    let addRequest = new Message("onCreateChannel", null, channelName);
+    ws.send(JSON.stringify(addRequest));
 }

@@ -4,8 +4,7 @@
     <title>PolyChat</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="main.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <script src="main.js"></script> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> 
 </head>
 <body>
     <header id = "header1">
@@ -34,11 +33,19 @@
     <header id = "header2">
         <div id = "groupeActif">
             <p>Groupe actif:</p>
-            <h2>GroupeActif</h2>
+            <h2 id = "dynamicCurrentGroup">GroupeActif</h2>
         </div>
         <div id = "listeGroupes">
             <p>Liste des groupes</p>
-            <h2>Groupes disponibles</h2>
+            <div id = "menuGroupe">
+                <div>
+                    <h2>Groupes disponibles</h2>
+                </div>
+                <div id = "menuGroupeIcones">
+                    <i id = "addChannelButton" class="fas fa-plus"></i>
+                    <i id = "settingChannelButton" class="fas fa-cog"></i>
+                </div>
+            </div>
         </div>
         
     </header>
@@ -68,11 +75,11 @@
         </div>
     </div>
 
+    <script src ="main.js"></script>
     <script src ="message.js"></script>
     <script src ="channel.js"></script>
-    
     <script src ="channelsObserver.js"></script>
     <script src ="connectionHandler.js"></script>
-    <script src ="main.js"></script> 
+     
 </body>
 </html>

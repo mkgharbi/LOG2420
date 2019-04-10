@@ -74,11 +74,7 @@ class ChannelView {
         }
     }
 
-    updateCurrentChannel(channel){
-        console.log("Change le nom channel pour");
-        console.log(channel.name);
-    
-    }
+  
 
     addChannel(channel){
 
@@ -87,8 +83,10 @@ class ChannelView {
 
 class MessageView {
     loadChannel(channel){
-        console.log("channelALLO")
+        console.log("On Load le channel")
     }
+
+   
 
     addMessage(message) {
 
@@ -98,17 +96,29 @@ class MessageView {
 
 class View {
     channelView = new ChannelView();
-    messageView = new MessageView();
+    messageView = new MessageView(); 
+    
+    updateCurrentChannel(channel){
+        document.getElementById("dynamicCurrentGroup").innerHTML = channel.name;
+        console.log("Change le nom channel pour");
+        console.log(channel.name);
+    
+    }
+
+    displayError(error) {
+        window.alert(error);
+    }
+
 }
 var view = new View();
 
 
 class Model {
     firstConnexion = true;
-    userName = "Default";
+    userName = "";
     channels = [];
     currentChannel;
-    activeChannels = [];
+    //activeChannels = [];
    
     setChannels(channels) {
         this.channels = channels;
@@ -119,10 +129,8 @@ class Model {
         view.channelView.updateChannelList(channels);
     }
 
-    getChannelById(id) {
-        for ()
-    }
-
+ 
+/*
     addActiveChannel(channel) {
         if (this.isActive(channel.id) == false) {
             this.activeChannels.push(channel);
@@ -145,13 +153,15 @@ class Model {
             }
         }
     }
+*/
 
     setCurrentChannel(channel){
         this.currentChannel = channel;
-        view.channelView.updateCurrentChannel(channel);
+        view.updateCurrentChannel(channel);
         view.messageView.loadChannel(channel);
     }
 
+    /*
     addMessage(message) {
         if (this.isActive(message.channelId) == true) {
             let index = getIndexActiveChannel(message.channelId);
@@ -163,22 +173,32 @@ class Model {
             
         }
     }
-  
+*/  
+
+    handleError(error) {
+        view.displayError("ERREUR: " + error);
+    }
 
 }
 
 var model = new Model();
 
 function joinChannel(parent) {
-    sendJoinRequest(parent.id, model.userName);
+    sendJoinRequest(parent.id);
 }
 
 function leaveChannel(parent) {
-    sendLeaveRequest(parent.id, model.userName);
+    sendLeaveRequest(parent.id);
 }
 function selectChannel(parent) {
-    model.set
+    getChannelRequest(parent.id);
 }
+
+document.getElementById("addChannelButton").addEventListener("click", function() {
+    let newChannelName = prompt("Entrez le nom du nouveau groupe", "Nouveau Groupe");
+    console.log(newChannelName);
+    addChannelRequest(newChannelName);
+})
 
 /*
 class Controller {
